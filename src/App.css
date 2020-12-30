@@ -4,8 +4,10 @@ html, body, #root, #root>div {
 .App {
   text-align: center;
   background-image: url('./assets/meadow-landscape.png');
-  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-color: #caf4ff;
+  background-repeat: no-repeat;
+  background-position-y: bottom;
   overflow: auto;
 }
 .header {
