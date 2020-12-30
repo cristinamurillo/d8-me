@@ -6,6 +6,11 @@ html, body, #root, #root>div {
   background-image: url('./assets/meadow-landscape.png');
   background-repeat: no-repeat;
   background-color: #caf4ff;
+  overflow: auto;
+}
+.header {
+  font-family: 'Bungee Outline';
+  font-size: 3.5rem;
 }
 
 .App-logo {
