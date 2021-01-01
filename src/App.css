@@ -1,5 +1,6 @@
 html, body, #root, #root>div {
-  height: 100%
+  height: 100%;
+  overflow: hidden;
 }
 .App {
   text-align: center;
@@ -8,44 +9,50 @@ html, body, #root, #root>div {
   background-color: #caf4ff;
   background-repeat: no-repeat;
   background-position-y: bottom;
+  background-size: 200vw;
   overflow: auto;
 }
 .header {
   font-family: 'Bungee Outline';
   font-size: 3.5rem;
+  position: relative;
+  top: 16vh;
+}
+.cloud {
+  height: 10rem;
+  position: absolute;
+}
+.cloud.top {
+  animation: cloud-x-travel 80s linear 0s infinite;
+  height: 6rem;
+  top: 3vw;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.cloud.middle {
+  animation: cloud-x-travel 65s linear 0s infinite reverse;
+  height: 7rem;
+  top: 7vw;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cloud.bottom {
+  animation: cloud-x-travel 75s linear 5s infinite reverse;
+  height: 8rem;
+  top: 10vw;
+  right: -100vw;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.balloon {
+  height: 25rem;
+  position: absolute;
+  left: 15vw;
+  top: 30vh;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes cloud-x-travel {
+  from {left: -7vw;}
+  to {left: 100vw;}
 }
