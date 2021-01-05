@@ -12,11 +12,25 @@ html, body, #root, #root>div {
   background-size: 200vw;
   overflow: auto;
 }
+.center-header {
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+  top: 15vh;
+  left: 18vw;
+}
+@media (max-width: 700px) {
+  .center-header {
+      left: 3vw;
+  }
+}
+
 .header {
   font-family: 'Bungee Outline';
   font-size: 3.5rem;
   position: relative;
-  top: 16vh;
+  margin: 0;
+  text-align: left;
 }
 .cloud {
   height: 10rem;
@@ -46,6 +60,11 @@ html, body, #root, #root>div {
   position: absolute;
   left: 15vw;
   top: 30vh;
+}
+
+#smiling-cloud {
+  height: 9rem;
+  margin-left: 1.5rem;
 }
 
 .App-link {
