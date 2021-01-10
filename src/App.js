@@ -8,15 +8,21 @@ import DateCircle from './DateCircle';
 const BG_IMAGE_WIDTH_PX = 3000
 
 function App() {
-  const background = useRef();
+  const backgroundRef = useRef();
+  const balloonRef = useRef()
 
   const scrollToDateCircle = () => {
-    const translateXPixels = window.innerWidth - BG_IMAGE_WIDTH_PX
-    background.current.style.transform = `translate(${translateXPixels}px, 0)`
+    const translateXPixels = window.innerWidth - BG_IMAGE_WIDTH_PX;
+    balloonRef.current.style.transform = `translate(${-1 * translateXPixels}px, 0) rotate(20deg)`;
+    backgroundRef.current.style.transform = `translate(${translateXPixels}px, 0)`;
+    setTimeout(() => {
+      balloonRef.current.className = 'balloon unrotated-balloon';
+      balloonRef.current.style.transform = `translate(${-1 * translateXPixels}px, 0) rotate(0deg)`;
+    }, 3000);
   };
 
   return (
-    <div className={`App`} ref={background}>
+    <div className={`App`} ref={backgroundRef}>
       <img src={cloud} alt="cloud" className="cloud top"/>
       <img src={cloud} alt="cloud" className="cloud middle"/>
       <img src={cloud} alt="cloud" className="cloud bottom"/>
@@ -28,7 +34,7 @@ function App() {
             alt="smiling cloud"
             id="smiling-cloud"/>
         </span>
-      <img src={balloon} alt="hot air balloon" className="balloon"/>
+      <img ref={balloonRef} src={balloon} alt="hot air balloon" className="balloon"/>
       <DateCircle />
     </div>
   );

@@ -61,6 +61,11 @@ html, body, #root, #root>div {
   position: absolute;
   left: 15vw;
   top: 30vh;
+  transition: transform 3s;
+}
+
+.balloon.unrotated-balloon {
+  transition: transform 2s;
 }
 
 #smiling-cloud {
