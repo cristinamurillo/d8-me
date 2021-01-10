@@ -76,17 +76,36 @@ html, body, #root, #root>div {
 
 .date-circle-container {
   position: absolute;
-  left: 2000px;
-  bottom: 15vh;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 6fr 2fr 1fr;
+  grid-template-rows: 2fr 2fr 1fr;
+}
+
+
+.date-circle-container > img,
+.date-circle-container > svg
+{
+  grid-column: 2 / 2;
+  grid-row: 2 / 2;
+}
+
+.date-circle-container > img {
+  height: 40vh;
+  width: 40vh;
+  border-radius: 50%;
 }
 
 
 .spinner {
-  animation: spin 20s linear 10s infinite;
+  animation: spin 20s linear infinite;
 }
 
 .drawn-circle {
-  animation: draw-dash 10s linear forwards;
+  /* animation: draw-dash 10s linear forwards; */
 }
 
 #circle-one {
