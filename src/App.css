@@ -9,8 +9,9 @@ html, body, #root, #root>div {
   background-color: #caf4ff;
   background-repeat: no-repeat;
   background-position-y: bottom;
-  width: 240vw;
-  overflow: auto !important;
+  background-size: 3000px;
+  width: 3000px;
+  transition: transform 3s;
 }
 .center-header {
   display: flex;

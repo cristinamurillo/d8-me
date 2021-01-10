@@ -8,7 +8,8 @@ function App() {
   const background = useRef();
 
   const scrollToDateCircle = () => {
-    background.current.style.transform = "translate(-110vw, 0)"
+    const translateXPixels = window.innerWidth - 3000
+    background.current.style.transform = `translate(${translateXPixels}px, 0)`
   };
 
   return (
