@@ -72,7 +72,53 @@ html, body, #root, #root>div {
   color: #61dafb;
 }
 
+/* circle stuff */
+
+.date-circle-container {
+  position: absolute;
+  left: 2000px;
+  bottom: 15vh;
+}
+
+
+.spinner {
+  animation: spin 20s linear 10s infinite;
+}
+
+.drawn-circle {
+  animation: draw-dash 10s linear forwards;
+}
+
+#circle-one {
+  stroke: rgb(180, 201, 246);
+  stroke-dasharray: 98vh;
+}
+
+#circle-two {
+  stroke: rgb(207, 188, 238);
+  stroke-dasharray: 44vh;
+}
+
+#circle-three {
+  stroke: thistle;
+  stroke-dasharray: 17vh;
+}
+
+
 @keyframes cloud-x-travel {
   from {left: -7vw;}
   to {left: 100vw;}
 }
+
+@keyframes draw-dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform:rotate(360deg);
+  }
+}
+

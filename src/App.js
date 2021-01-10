@@ -1,14 +1,17 @@
+import {useRef} from 'react';
 import './App.css';
 import cloud from './assets/clouds.svg';
 import balloon from './assets/hot-air-balloon.png';
 import smileyCloud from './assets/smiley-cloud.svg';
-import {useRef} from 'react';
+import DateCircle from './DateCircle';
+
+const BG_IMAGE_WIDTH_PX = 3000
 
 function App() {
   const background = useRef();
 
   const scrollToDateCircle = () => {
-    const translateXPixels = window.innerWidth - 3000
+    const translateXPixels = window.innerWidth - BG_IMAGE_WIDTH_PX
     background.current.style.transform = `translate(${translateXPixels}px, 0)`
   };
 
@@ -26,8 +29,10 @@ function App() {
             id="smiling-cloud"/>
         </span>
       <img src={balloon} alt="hot air balloon" className="balloon"/>
+      <DateCircle />
     </div>
   );
 }
 
 export default App;
+export {BG_IMAGE_WIDTH_PX}
