@@ -5,12 +5,12 @@ html, body, #root, #root>div {
 .App {
   text-align: center;
   background-image: url('./assets/meadow-landscape.png');
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-color: #caf4ff;
   background-repeat: no-repeat;
   background-position-y: bottom;
-  background-size: 200vw;
-  overflow: auto;
+  width: 240vw;
+  overflow: auto !important;
 }
 .center-header {
   display: flex;
