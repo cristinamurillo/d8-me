@@ -2,7 +2,7 @@ import React from 'react';
 import {BG_IMAGE_WIDTH_PX} from './App';
 
 export default function DateCircle() {
-  const radius = 20;
+  const radius = 25;
   const circleIds = ['circle-one', 'circle-two', 'circle-three']
   const container = { 
     transform: `translate(${-1 * (window.innerWidth - BG_IMAGE_WIDTH_PX)}px, 0px)` 
@@ -24,7 +24,6 @@ export default function DateCircle() {
             <circle
               key={id}
               id={id}
-              className="drawn-circle"
               cx="350"
               cy="350"
               r={`${radius}vh`}

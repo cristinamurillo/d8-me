@@ -82,7 +82,7 @@ html, body, #root, #root>div {
   justify-items: center;
   align-items: center;
   grid-template-columns: 6fr 2fr 1fr;
-  grid-template-rows: 2fr 2fr 1fr;
+  grid-template-rows: 2fr 2fr 4fr;
 }
 
 
@@ -94,18 +94,14 @@ html, body, #root, #root>div {
 }
 
 .date-circle-container > img {
-  height: 40vh;
-  width: 40vh;
+  height: 50vh;
+  width: 50vh;
   border-radius: 50%;
 }
 
 
 .spinner {
   animation: spin 20s linear infinite;
-}
-
-.drawn-circle {
-  /* animation: draw-dash 10s linear forwards; */
 }
 
 #circle-one {
@@ -115,12 +111,12 @@ html, body, #root, #root>div {
 
 #circle-two {
   stroke: rgb(207, 188, 238);
-  stroke-dasharray: 44vh;
+  stroke-dasharray: 50vh;
 }
 
 #circle-three {
   stroke: thistle;
-  stroke-dasharray: 17vh;
+  stroke-dasharray: 35vh;
 }
 
 
