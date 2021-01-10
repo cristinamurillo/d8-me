@@ -1,4 +1,5 @@
 import {useRef} from 'react';
+import styled, {keyframes} from 'styled-components';
 import './App.css';
 import cloud from './assets/clouds.svg';
 import balloon from './assets/hot-air-balloon.png';
@@ -6,19 +7,35 @@ import smileyCloud from './assets/smiley-cloud.svg';
 import DateCircle from './DateCircle';
 
 const BG_IMAGE_WIDTH_PX = 3000
+const bgTranslationPixels = window.innerWidth - BG_IMAGE_WIDTH_PX
+const moveBalloon = keyframes`
+  0% {
+    transform: translateX(0px) rotate(0deg)
+  }
+  50% {
+    transform: translateX(${(-1 * bgTranslationPixels) * 2 / 3}px) rotate(20deg)
+  }
+  100% {
+    transform: translateX(${-1 * bgTranslationPixels}px) rotate(0deg)
+  }
+`;
+
+const HotAirBalloon = styled.img`
+  height: 25rem;
+  position: absolute;
+  left: 15vw;
+  top: 30vh;
+  animation: ${moveBalloon} 3s paused;
+  transform: translateX(${-1 * bgTranslationPixels}px) rotate(0deg);
+`;
 
 function App() {
   const backgroundRef = useRef();
   const balloonRef = useRef()
 
   const scrollToDateCircle = () => {
-    const translateXPixels = window.innerWidth - BG_IMAGE_WIDTH_PX;
-    balloonRef.current.style.transform = `translate(${-1 * translateXPixels}px, 0) rotate(20deg)`;
-    backgroundRef.current.style.transform = `translate(${translateXPixels}px, 0)`;
-    setTimeout(() => {
-      balloonRef.current.className = 'balloon unrotated-balloon';
-      balloonRef.current.style.transform = `translate(${-1 * translateXPixels}px, 0) rotate(0deg)`;
-    }, 3000);
+    backgroundRef.current.style.transform = `translate(${bgTranslationPixels}px, 0)`;
+    balloonRef.current.style.animationPlayState = 'running';
   };
 
   return (
@@ -34,7 +51,7 @@ function App() {
             alt="smiling cloud"
             id="smiling-cloud"/>
         </span>
-      <img ref={balloonRef} src={balloon} alt="hot air balloon" className="balloon"/>
+      <HotAirBalloon ref={balloonRef} src={balloon} alt="hot air balloon" className="balloon"/>
       <DateCircle />
     </div>
   );

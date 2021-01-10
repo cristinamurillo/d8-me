@@ -56,14 +56,6 @@ html, body, #root, #root>div {
   right: -100vw;
 }
 
-.balloon {
-  height: 25rem;
-  position: absolute;
-  left: 15vw;
-  top: 30vh;
-  transition: transform 3s;
-}
-
 .balloon.unrotated-balloon {
   transition: transform 2s;
 }
@@ -71,6 +63,7 @@ html, body, #root, #root>div {
 #smiling-cloud {
   height: 9rem;
   margin-left: 1.5rem;
+  cursor: pointer;
 }
 
 .App-link {
