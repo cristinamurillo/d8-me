@@ -1,19 +1,32 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {BG_IMAGE_WIDTH_PX} from './App';
+import {DATES} from './dates';
 
 export default function DateCircle() {
   const radius = 25;
   const circleIds = ['circle-one', 'circle-two', 'circle-three']
   const container = { 
     transform: `translate(${-1 * (window.innerWidth - BG_IMAGE_WIDTH_PX)}px, 0px)` 
-};
+  };
+
+  const [dateIdea, setDateIdea] = useState({})
+
+  useEffect(() => {
+    setRandomDateIdea();
+  }, [])
+
+  const setRandomDateIdea = () => {
+    const randIndex = Math.floor(Math.random() * DATES.length);
+    setDateIdea(DATES[randIndex], randIndex)
+  };
   
   return (
     <div className="date-circle-container" style={container}>
-      <h2 className="lg-description">This is the date description. Fun fun :-).</h2>
+      <h2 className="lg-description">{dateIdea.desc}</h2>
       <img
         alt="date"
-        src="https://images.unsplash.com/photo-1550865811-5db66d4e19ac?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80"/>
+        src={dateIdea.image}
+      />
       <svg
         className="spinner"
         width="700"
