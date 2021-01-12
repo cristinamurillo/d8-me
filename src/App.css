@@ -67,10 +67,14 @@ html, body, #root, #root>div {
 }
 
 .lg-description {
-  font-family: 'Bungee Outline';
+  font-family: 'Yusei Magic', sans-serif;
   font-size: 2.3rem;
   position: relative;
   text-align: left;
+  border-radius: 8px;
+  background: #fcfc61;
+  padding: 1.2rem;
+  overflow: scroll;
 }
 
 /* circle stuff */

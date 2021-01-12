@@ -2,7 +2,7 @@ import salsa from './assets/salsa.png';
 export const DATES = [
   {
     desc: "Go see live comedy!",
-    image: "https://www.theblacklistnyc.com/imgs/2-Dope-Queens-2018.jpg"
+    image: "https://d.newsweek.com/en/full/649826/2-dope-queens.jpg",
   },
   {
     desc: "Go to a salsa class ;).",
@@ -57,7 +57,7 @@ export const DATES = [
     image: "https://imgs.6sqft.com/wp-content/uploads/2018/08/01103439/WashingtonSquarePark.png",
   },
   {
-    desc: "Eat a restaurant in a new neighborhood.",
+    desc: "Eat at a restaurant in a new neighborhood.",
     image: "https://i.pinimg.com/736x/20/27/0f/20270fdb19d0c0925c3d0ca3cb6280c8.jpg",
   },
   {
