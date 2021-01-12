@@ -10,6 +10,7 @@ export default function DateCircle() {
   
   return (
     <div className="date-circle-container" style={container}>
+      <h2 className="lg-description">This is the date description. Fun fun :-).</h2>
       <img
         alt="date"
         src="https://images.unsplash.com/photo-1550865811-5db66d4e19ac?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80"/>

@@ -66,8 +66,11 @@ html, body, #root, #root>div {
   cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.lg-description {
+  font-family: 'Bungee Outline';
+  font-size: 2.3rem;
+  position: relative;
+  text-align: left;
 }
 
 /* circle stuff */
@@ -81,6 +84,14 @@ html, body, #root, #root>div {
   align-items: center;
   grid-template-columns: 6fr 2fr 1fr;
   grid-template-rows: 2fr 2fr 4fr;
+}
+
+.date-circle-container > .lg-description {
+  grid-column: 1 / 1;
+  grid-row: 2 / 2;
+  align-self: start;
+  justify-self: end;
+  width: 70%;
 }
 
 
@@ -103,24 +114,24 @@ html, body, #root, #root>div {
 }
 
 #circle-one {
-  stroke: rgb(180, 201, 246);
+  stroke: #FC7753;
   stroke-dasharray: 98vh;
 }
 
 #circle-two {
-  stroke: rgb(207, 188, 238);
+  stroke: #09BC8A;
   stroke-dasharray: 50vh;
 }
 
 #circle-three {
-  stroke: thistle;
+  stroke: #FCFC62;
   stroke-dasharray: 35vh;
 }
 
 
 @keyframes cloud-x-travel {
-  from {left: -7vw;}
-  to {left: 100vw;}
+  from {left: -7%;}
+  to {left: 105%;}
 }
 
 @keyframes draw-dash {
