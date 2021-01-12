@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {BG_IMAGE_WIDTH_PX} from './App';
 import {DATES} from './dates';
 
-export default function DateCircle() {
+export default function DateCircle({scrollToHome}) {
   const radius = 25;
   const circleIds = ['circle-one', 'circle-two', 'circle-three']
   const container = { 
@@ -19,7 +19,9 @@ export default function DateCircle() {
   const handleKeyUp = ({ key }) => {
     if (key === " ") {
       setRandomDateIdea();
-    };
+    } else if (key === "Escape") {
+      scrollToHome();
+    }
   };
 
   const setRandomDateIdea = () => {

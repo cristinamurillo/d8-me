@@ -27,6 +27,7 @@ const HotAirBalloon = styled.img`
   top: 30vh;
   animation: ${moveBalloon} 3s paused;
   transform: translateX(${-1 * bgTranslationPixels}px) rotate(0deg);
+  transition: transform 3s;
 `;
 
 function App() {
@@ -38,6 +39,14 @@ function App() {
     setShowDateCircle(true);
     backgroundRef.current.style.transform = `translate(${bgTranslationPixels}px, 0)`;
     balloonRef.current.style.animationPlayState = 'running';
+  };
+
+  const scrollToHome = () => {
+    backgroundRef.current.style.transform = `translate(0px, 0)`;
+    balloonRef.current.style.transform = `translate(0, 0)`;
+    setInterval(() => {
+      setShowDateCircle(false);
+    }, 3000);
   };
 
   return (
@@ -54,7 +63,7 @@ function App() {
             id="smiling-cloud"/>
         </span>
       <HotAirBalloon ref={balloonRef} src={balloon} alt="hot air balloon" className="balloon"/>
-      {showDateCircle && <DateCircle />}
+      {showDateCircle && <DateCircle scrollToHome={scrollToHome}/>}
     </div>
   );
 }
