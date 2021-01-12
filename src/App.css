@@ -106,6 +106,8 @@ html, body, #root, #root>div {
   height: 50vh;
   width: 50vh;
   border-radius: 50%;
+  object-fit: cover;
+  transition: all 1s;
 }
 
 

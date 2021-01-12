@@ -13,7 +13,14 @@ export default function DateCircle() {
 
   useEffect(() => {
     setRandomDateIdea();
-  }, [])
+    window.addEventListener('keyup', handleKeyUp)
+  }, []);
+
+  const handleKeyUp = ({ key }) => {
+    if (key === " ") {
+      setRandomDateIdea();
+    };
+  };
 
   const setRandomDateIdea = () => {
     const randIndex = Math.floor(Math.random() * DATES.length);
