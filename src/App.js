@@ -21,10 +21,10 @@ const moveBalloon = keyframes`
 `;
 
 const HotAirBalloon = styled.img`
-  height: 25rem;
+  height: 30rem;
   position: absolute;
   left: 15vw;
-  top: 30vh;
+  top: 27vh;
   animation: ${moveBalloon} 3s paused;
   transform: translateX(${-1 * bgTranslationPixels}px) rotate(0deg);
   transition: transform 3s;
